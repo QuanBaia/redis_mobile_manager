@@ -3,4 +3,4 @@
 
 
 # License
-MIT © [<NAME>](https://github.com/QuanBaia/redis_mobile_manager/LICENSE)
+[MIT © QuanBaia](https://github.com/QuanBaia/redis_mobile_manager/LICENSE)
