@@ -1,2 +1,6 @@
 # Redis-Mobile-Manager
-🚀🚀 Mobile Redis Manager  Manage your Redis databases 💾 with ease on your mobile device! Stay connected 🌐 and productive ⚡ anytime, anywhere! 🌟🎉
+🚀🚀 Mobile Redis Manager ：  Manage your Redis databases 💾 with ease on your mobile device! Stay connected 🌐 and productive ⚡ anytime, anywhere! 🌟🎉
+
+
+# License
+MIT © [<NAME>](https://github.com/QuanBaia/redis_mobile_manager/LICENSE)
