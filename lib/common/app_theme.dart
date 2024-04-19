@@ -7,7 +7,17 @@ class AppTheme {
   static ThemeData mainTheme = ThemeData(
     //font theme
     fontFamily: 'HuaWeiSans',
-
+    textTheme: const TextTheme(
+      bodySmall:TextStyle(
+        color: Colors.black,
+      ),
+      bodyLarge: TextStyle(
+        color: Colors.black,
+      ),
+      bodyMedium: TextStyle(
+        color: Colors.black,
+      ),
+    ),
     //app bar theme
     appBarTheme: const AppBarTheme(
       color: Color(0xfffafbfd),
@@ -17,9 +27,16 @@ class AppTheme {
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
+
     ),
     //page theme
     scaffoldBackgroundColor: const Color(0xffedf1f2),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: Color(0xffc4def7),
+      foregroundColor: Color(0xff538fd8),
+      elevation: 0,
+      splashColor: Color(0xff355c8b),
+    ),
 
   );
 
@@ -27,6 +44,18 @@ class AppTheme {
 
     //font theme
     fontFamily: 'HuaWeiSans',
+    textTheme: const TextTheme(
+      bodySmall:TextStyle(
+        color: Colors.white,
+      ),
+      bodyLarge: TextStyle(
+        color: Colors.white,
+      ),
+      bodyMedium: TextStyle(
+        color: Colors.white,
+      ),
+    ),
+
     //app bar theme
     appBarTheme: const AppBarTheme(
       color: Color(0xff292a3c),
@@ -39,7 +68,12 @@ class AppTheme {
     ),
     //page theme
     scaffoldBackgroundColor: const Color(0xff141527),
-    //text theme
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: Color(0xff417368),
+      foregroundColor: Colors.white,
+      elevation: 0,
+      splashColor: Color(0xff6cbfad),
+    ),
 
   );
 
