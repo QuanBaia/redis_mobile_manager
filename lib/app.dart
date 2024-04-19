@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
       translations: Messages(),
       locale: Locale("ja","JP"),
       fallbackLocale: const Locale("en", "US"),
+      theme: ThemeData(
+        fontFamily: 'HuaWeiSans',
+      ),
 
     );
   }
