@@ -18,6 +18,8 @@ class AppTheme {
         color: Colors.black,
       ),
     ),
+
+
     //app bar theme
     appBarTheme: const AppBarTheme(
       color: Color(0xfffafbfd),
@@ -27,8 +29,20 @@ class AppTheme {
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
 
     ),
+
+
+
+    // menu theme
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: Color(0xfffafbfd),
+    ),
+
+
     //page theme
     scaffoldBackgroundColor: const Color(0xffedf1f2),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -36,6 +50,12 @@ class AppTheme {
       foregroundColor: Color(0xff538fd8),
       elevation: 0,
       splashColor: Color(0xff355c8b),
+    ),
+
+
+    // icon theme
+    iconTheme: const IconThemeData(
+      color: Colors.black,
     ),
 
   );
@@ -56,6 +76,7 @@ class AppTheme {
       ),
     ),
 
+
     //app bar theme
     appBarTheme: const AppBarTheme(
       color: Color(0xff292a3c),
@@ -65,7 +86,20 @@ class AppTheme {
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
+      iconTheme: IconThemeData(
+        color: Colors.white,
+      ),
     ),
+
+
+
+    // menu theme
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: Color(0xff292a3c),
+    ),
+
+
+
     //page theme
     scaffoldBackgroundColor: const Color(0xff141527),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -73,6 +107,11 @@ class AppTheme {
       foregroundColor: Colors.white,
       elevation: 0,
       splashColor: Color(0xff6cbfad),
+    ),
+
+    // icon theme
+    iconTheme: const IconThemeData(
+      color: Colors.white,
     ),
 
   );
