@@ -15,6 +15,11 @@ class MyApp extends StatelessWidget {
       initialBinding: Binding(),
       initialRoute: '/',
       translations: Messages(),
+      locale: Locale("ja","JP"),
+      fallbackLocale: const Locale("en", "US"),
+
     );
   }
+
+
 }
