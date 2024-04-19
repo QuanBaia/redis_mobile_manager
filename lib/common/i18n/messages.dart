@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:redis_mobile_manager/common/i18n/content.dart';
+import './content.dart';
+
 
 class Messages extends Translations {
   @override
@@ -16,7 +17,6 @@ class Messages extends Translations {
       Content.homePageTitle : "HOST",
       Content.homePageIsEmptyText : "Please add redis connection first",
     },
-
     "ja_JP":{
       Content.homePageTitle : "ホスト",
       Content.homePageIsEmptyText : "まず、redis 接続を追加してください",

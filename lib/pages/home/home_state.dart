@@ -2,8 +2,10 @@ import 'package:get/get.dart';
 
 class HomeState {
 
-  RxBool isLoading = false.obs;
+  final RxBool _isLoading = false.obs;
 
+  get isLoading => _isLoading;
+  set isLoading(value) => _isLoading.value = value;
 
   HomeState() {}
 }
