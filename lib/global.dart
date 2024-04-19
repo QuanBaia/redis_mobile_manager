@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:redis_mobile_manager/common/service/shared_service.dart';
 
+
+
 class Global {
   static Future init() async {
     // 初始化
@@ -13,6 +15,8 @@ class Global {
       SystemUiOverlayStyle style = const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
       SystemChrome.setSystemUIOverlayStyle(style);
     }
+
+
 
 
     // 加载service
