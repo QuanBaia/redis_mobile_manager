@@ -15,8 +15,26 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(Content.homePageTitle.tr),
+        leading: Builder(builder: (BuildContext context) {
+          return Tooltip(
+            message: Content.homePageMenu.tr,
+            child: IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            ),
+          );
+        }),
+
       ),
       floatingActionButton: const FloatingButton(),
+      // 侧边栏
+      drawer: Drawer(
+          semanticLabel: 'hhhhhhhhhh',
+      ),
+
+
       body: Container(
         height: double.infinity,
         width: double.infinity,
