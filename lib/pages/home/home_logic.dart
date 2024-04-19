@@ -8,8 +8,15 @@ class HomeLogic extends GetxController {
   final HomeState state = HomeState();
   final _redisConnectsController = Get.find<RedisConnectsController>();
 
+  //获取redis连接列表
+  get redisList => _redisConnectsController.redisVoList;
+
+
+
   @override
   void onInit() {
+
+
     super.onInit();
   }
 

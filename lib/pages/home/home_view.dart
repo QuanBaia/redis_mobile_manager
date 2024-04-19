@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../common/i18n/content.dart';
 import 'home_logic.dart';
+import 'index.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,8 +16,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(Content.homePageTitle.tr),
       ),
-      body: Center(
-        child: Text("你好 ${ Get.fallbackLocale }"),
+      floatingActionButton: const FloatingButton(),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        padding: const EdgeInsets.all(20),
+        child: logic.redisList.isEmpty
+            ? const EmptyView()
+            : Obx(() => const RedisListView()),
       ),
     );
   }
