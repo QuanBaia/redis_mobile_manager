@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:redis_mobile_manager/common/app_theme.dart';
 import 'package:redis_mobile_manager/common/binding.dart';
 import 'package:redis_mobile_manager/common/i18n/messages.dart';
-import 'package:redis_mobile_manager/pages/home/home_view.dart';
 import 'common/routes.dart';
+
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -15,12 +17,11 @@ class MyApp extends StatelessWidget {
       initialBinding: Binding(),
       initialRoute: '/',
       translations: Messages(),
-      locale: Locale("ja","JP"),
+      locale: Get.deviceLocale,
       fallbackLocale: const Locale("en", "US"),
-      theme: ThemeData(
-        fontFamily: 'HuaWeiSans',
-      ),
-
+      themeMode: ThemeMode.system,
+      theme: AppTheme.mainTheme,
+      darkTheme: AppTheme.mainDarkTheme,
     );
   }
 
