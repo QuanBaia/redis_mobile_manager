@@ -28,6 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animations: ^2.0.11
+  flex_color_scheme: ^7.3.1
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.10+1
