@@ -7,27 +7,7 @@ import 'package:redis_mobile_manager/common/i18n/content.dart';
 class EmptyView extends StatelessWidget {
   const EmptyView({super.key});
 
-  // 主体内容
-  Widget _buildEmptyView() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // icon
-          SvgPicture.asset(
-            fit: BoxFit.contain,
-            height: Get.height * 0.4,
-            width: Get.height * 0.4,
-            AssetsUrl.homePageIsEmpty,
-          ),
 
-
-          // message
-          _buildEmptyMessage(),
-        ],
-      ),
-    );
-  }
 
   // 如果没有数据，提示的信息
   Widget _buildEmptyMessage() {
@@ -36,8 +16,24 @@ class EmptyView extends StatelessWidget {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
-    return _buildEmptyView();
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // icon
+          SvgPicture.asset(
+            fit: BoxFit.contain,
+            height: context.height * 0.4,
+            width: context.width * 0.4,
+            AssetsUrl.homePageIsEmpty,
+          ),
+          // message
+          _buildEmptyMessage(),
+        ],
+      ),
+    );
   }
 }

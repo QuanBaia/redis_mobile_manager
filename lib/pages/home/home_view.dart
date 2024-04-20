@@ -1,18 +1,47 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:redis_mobile_manager/common/bindings/menu_page_controller.dart';
+import 'package:redis_mobile_manager/pages/drawer/menu/menu_view.dart';
 import '../../common/i18n/content.dart';
-import 'home_logic.dart';
+import '../setting/setting_view.dart';
 import 'index.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
+
+
+  final MenuPageController _menuPageController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     final logic = Get.find<HomeLogic>();
     final state = logic.state;
 
+    final homeStyle = HomeStyle();
+
+
+    Widget buildHomePageBody() {
+      return Container(
+        height: double.infinity,
+        width: double.infinity,
+        padding: homeStyle.padding,
+        child: logic.redisList.isEmpty
+            ? const EmptyView()
+            : Obx(() => const RedisListView()),
+      );
+    }
+
+
+    Map<String, Widget> pages = {
+      'home': buildHomePageBody(),
+      'settings': const SettingPage(),
+
+    };
+
+
     return Scaffold(
+
       appBar: AppBar(
         title: Text(Content.homePageTitle.tr),
         leading: Builder(builder: (BuildContext context) {
@@ -28,21 +57,27 @@ class HomePage extends StatelessWidget {
         }),
 
       ),
-      floatingActionButton: const FloatingButton(),
+      floatingActionButton: FloatingButton(),
+
       // 侧边栏
-      drawer: Drawer(
-          semanticLabel: 'hhhhhhhhhh',
-      ),
+      drawer: MenuPage(),
 
+      body: Obx(() {
+        return PageTransitionSwitcher(
+          duration: const Duration(milliseconds: 1000),
+          transitionBuilder: (Widget child, Animation<double> primaryAnimation, Animation<double> secondaryAnimation) {
+            return FadeThroughTransition(
+              animation: primaryAnimation,
+              secondaryAnimation: secondaryAnimation,
+              child: child,
+            );
+          },
+          child: pages[_menuPageController.getPageName()],
 
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        padding: const EdgeInsets.all(20),
-        child: logic.redisList.isEmpty
-            ? const EmptyView()
-            : Obx(() => const RedisListView()),
-      ),
+        );
+      }),
+
     );
   }
+
 }
