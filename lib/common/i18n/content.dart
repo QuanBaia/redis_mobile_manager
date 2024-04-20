@@ -16,6 +16,21 @@ class Content {
 
 
 
+  // home drawer menu
+  //标题
+  static const String drawerTitle = "home_drawer_title";
+  //副标题
+  static const String drawerSubTitle = "home_drawer_sub_title";
+  // about page
+  static const String drawerItemHome = "home_drawer_item_home";
+  static const String drawerItemLog = "home_drawer_item_log";
+  static const String drawerItemAbout = "home_drawer_item_about";
+  static const String drawerItemSetting = "home_drawer_item_setting";
+
+
+
+
+
 
 
 }
