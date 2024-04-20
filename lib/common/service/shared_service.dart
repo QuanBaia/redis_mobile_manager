@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedService extends GetxService {
-  final Future<SharedPreferences> _preferences = SharedPreferences.getInstance();
+  final Future<SharedPreferences> _preferences =
+      SharedPreferences.getInstance();
 
   get sharedPreferences => _preferences;
 
@@ -32,7 +33,7 @@ class SharedService extends GetxService {
     });
   }
 
-  void removeListValue (String key,int id) {
+  void removeListValue(String key, int id) {
     _preferences.then((preferences) {
       // 先获取集合
       var list = preferences.getStringList(key);
@@ -47,8 +48,7 @@ class SharedService extends GetxService {
     });
   }
 
-  Future<Map<String, dynamic>> getListValue (String key,int id) async {
-
+  Future<Map<String, dynamic>> getListValue(String key, int id) async {
     final preferences = await _preferences;
     var list = preferences.getStringList(key);
     if (list == null) {
@@ -79,5 +79,22 @@ class SharedService extends GetxService {
     }
 
     return list;
+  }
+
+  addOrUpdateKeyValue(String key, dynamic value) {
+    _preferences.then((preferences) {
+      preferences.setString(key, value.toString());
+    });
+  }
+
+  Future<String?> getValue(key) async {
+    final preferences = await _preferences;
+    return preferences.getString(key);
+  }
+
+  void removeValue(key) {
+    _preferences.then((preferences) {
+      preferences.remove(key);
+    });
   }
 }
