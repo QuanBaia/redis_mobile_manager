@@ -13,7 +13,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final logic = Get.find<HomeLogic>();
     final state = logic.state;
-
     final homeStyle = HomeStyle();
 
 
