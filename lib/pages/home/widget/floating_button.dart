@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:redis_mobile_manager/common/bindings/menu_page_controller.dart';
-
-import '../../../common/i18n/content.dart';
-
+import 'package:redis_mobile_manager/pages/home/add/add_view.dart';
+import '../index.dart';
 
 class FloatingButton extends StatelessWidget {
   FloatingButton({super.key});
@@ -13,9 +11,32 @@ class FloatingButton extends StatelessWidget {
   Widget _buildHomeFloatingButton() {
     return Tooltip(
       message: Content.homePageAddButtonHint.tr,
-      child: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+      child: OpenContainer(
+        closedBuilder: (context, voidCallBack) {
+          return Container(
+            width: 56,
+            height: 56,
+            decoration: const BoxDecoration(
+              color: Color(0xff07444b),
+            ),
+            child: const Icon(
+              Icons.add,
+              size: 24,
+              color: Colors.white,
+            ),
+          );
+        },
+        openBuilder: (BuildContext context, void Function({Object? returnValue}) action) {
+          return const AddPage();
+        },
+        tappable: true,
+        transitionType: ContainerTransitionType.fade,
+        transitionDuration: const Duration(milliseconds: 500),
+        routeSettings: const RouteSettings(arguments: "你好") ,
+        openColor: Colors.transparent,
+        closedColor: Colors.transparent,
+
+
       ),
     );
   }
@@ -37,6 +58,4 @@ class FloatingButton extends StatelessWidget {
       }
     });
   }
-
-
 }

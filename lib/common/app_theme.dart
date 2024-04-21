@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 // app 主题管理
 class AppTheme {
-
-  static FlexSubThemesData  subThemesData = const FlexSubThemesData(
+  static FlexSubThemesData subThemesData = const FlexSubThemesData(
     blendOnLevel: 4,
     useFlutterDefaults: true,
     useTextTheme: true,
@@ -50,14 +49,10 @@ class AppTheme {
     tabBarIndicatorWeight: 5,
     tabBarIndicatorTopRadius: 9,
     tabBarDividerColor: Color(0x00000000),
-
     drawerRadius: 10.0,
     drawerWidth: 300.0,
     drawerIndicatorRadius: 20.0,
     drawerIndicatorSchemeColor: SchemeColor.onTertiary,
-
-
-
     bottomSheetElevation: 20.0,
     bottomSheetModalElevation: 20.0,
     navigationBarSelectedLabelSchemeColor: SchemeColor.onSurface,
@@ -75,56 +70,56 @@ class AppTheme {
     navigationRailUnselectedLabelSchemeColor: SchemeColor.tertiary,
     navigationRailSelectedIconSchemeColor: SchemeColor.onBackground,
     navigationRailUnselectedIconSchemeColor: SchemeColor.tertiary,
-
   );
 
   static ThemeData mainTheme = FlexThemeData.light(
-    fontFamily: "HuaWeiSans",
-    scheme: FlexScheme.blue,
-    surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffoldVariantDialog,
-    blendLevel: 36,
-    lightIsWhite: true,
-    swapColors: true,
-    surfaceTint: const Color(0xff1976d2),
-    subThemesData: subThemesData,
-
-    keyColors: const FlexKeyColors(
-      useSecondary: true,
-      useTertiary: true,
-      keepPrimary: true,
-      keepSecondary: true,
-      keepTertiary: true,
-      keepPrimaryContainer: true,
-      keepSecondaryContainer: true,
-      keepTertiaryContainer: true,
-    ),
-    visualDensity: VisualDensity.standard,
-    useMaterial3: true,
-    swapLegacyOnMaterial3: true,
-  );
+      fontFamily: "HuaWeiSans",
+      scheme: FlexScheme.blue,
+      surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffoldVariantDialog,
+      blendLevel: 36,
+      lightIsWhite: true,
+      swapColors: true,
+      surfaceTint: const Color(0xff1976d2),
+      subThemesData: subThemesData,
+      keyColors: const FlexKeyColors(
+        useSecondary: true,
+        useTertiary: true,
+        keepPrimary: true,
+        keepSecondary: true,
+        keepTertiary: true,
+        keepPrimaryContainer: true,
+        keepSecondaryContainer: true,
+        keepTertiaryContainer: true,
+      ),
+      visualDensity: VisualDensity.standard,
+      useMaterial3: true,
+      swapLegacyOnMaterial3: true,
+      pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder()
+          }));
 
   static ThemeData mainDarkTheme = FlexThemeData.dark(
-    fontFamily: "HuaWeiSans",
-    scheme: FlexScheme.green,
-    surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
-    blendLevel: 40,
-    appBarElevation: 20.0,
-    darkIsTrueBlack: true,
-    swapColors: true,
-    surfaceTint: const Color(0xff2196f3),
-    subThemesData: subThemesData,
-    keyColors: const FlexKeyColors(
-      useSecondary: true,
-      useTertiary: true,
-    ),
-    visualDensity: VisualDensity.standard,
-    useMaterial3: true,
-    swapLegacyOnMaterial3: true,
-  );
-
-
-
-
-
-
+      fontFamily: "HuaWeiSans",
+      scheme: FlexScheme.green,
+      surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+      blendLevel: 40,
+      appBarElevation: 20.0,
+      darkIsTrueBlack: true,
+      swapColors: true,
+      surfaceTint: const Color(0xff2196f3),
+      subThemesData: subThemesData,
+      keyColors: const FlexKeyColors(
+        useSecondary: true,
+        useTertiary: true,
+      ),
+      visualDensity: VisualDensity.standard,
+      useMaterial3: true,
+      swapLegacyOnMaterial3: true,
+      pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
+            TargetPlatform.iOS: OpenUpwardsPageTransitionsBuilder()
+          }));
 }

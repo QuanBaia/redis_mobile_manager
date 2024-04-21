@@ -37,7 +37,6 @@ class HomePage extends StatelessWidget {
 
 
     return Scaffold(
-
       appBar: AppBar(
         title: Text(Content.homePageTitle.tr),
         leading: Builder(builder: (BuildContext context) {
@@ -51,7 +50,6 @@ class HomePage extends StatelessWidget {
             ),
           );
         }),
-
       ),
       floatingActionButton: FloatingButton(),
 
@@ -69,7 +67,6 @@ class HomePage extends StatelessWidget {
             );
           },
           child: pages[_menuPageController.getPageName()],
-
         );
       }),
 
