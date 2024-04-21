@@ -3,227 +3,127 @@ import 'package:flutter/material.dart';
 
 // app 主题管理
 class AppTheme {
- /* // main theme
-  static ThemeData mainTheme = ThemeData.light().copyWith(
-    //font theme
-    textTheme: const TextTheme(
-      bodySmall: TextStyle(
-        color: Colors.black,
-      ),
-      bodyLarge: TextStyle(
-        color: Colors.black,
-      ),
-      bodyMedium: TextStyle(
-        color: Colors.black,
-      ),
-      titleLarge: TextStyle(
-        color: Colors.black,
-      ),
-      titleMedium: TextStyle(
-        color: Colors.black,
-      ),
-      titleSmall: TextStyle(
-        //灰色
-        color: Color(0xff999999),
-      ),
-    ),
 
-    //app bar theme
-    appBarTheme: const AppBarTheme(
-      color: Color(0xfffafbfd),
-      centerTitle: true,
-      titleTextStyle: TextStyle(
-        color: Colors.black,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
-      iconTheme: IconThemeData(
-        color: Colors.black,
-      ),
-    ),
+  static FlexSubThemesData  subThemesData = const FlexSubThemesData(
+    blendOnLevel: 4,
+    useFlutterDefaults: true,
+    useTextTheme: true,
+    defaultRadius: 30.0,
+    adaptiveRadius: FlexAdaptive.all(),
+    thinBorderWidth: 2.0,
+    filledButtonRadius: 10.0,
+    elevatedButtonRadius: 10.0,
+    outlinedButtonRadius: 10.0,
+    toggleButtonsRadius: 10.0,
+    toggleButtonsBorderWidth: 1.0,
+    segmentedButtonRadius: 10.0,
+    segmentedButtonBorderWidth: 1.0,
+    switchSchemeColor: SchemeColor.tertiary,
+    switchThumbSchemeColor: SchemeColor.tertiaryContainer,
+    switchThumbFixedSize: true,
+    checkboxSchemeColor: SchemeColor.tertiary,
+    radioSchemeColor: SchemeColor.onTertiaryContainer,
+    unselectedToggleIsColored: true,
+    sliderBaseSchemeColor: SchemeColor.tertiaryContainer,
+    sliderIndicatorSchemeColor: SchemeColor.onSurfaceVariant,
+    sliderValueTinted: true,
+    sliderValueIndicatorType: FlexSliderIndicatorType.drop,
+    sliderShowValueIndicator: ShowValueIndicator.always,
+    inputDecoratorBorderType: FlexInputBorderType.underline,
+    inputDecoratorRadius: 15.0,
+    inputDecoratorUnfocusedHasBorder: false,
+    fabUseShape: true,
+    fabRadius: 10.0,
+    chipSchemeColor: SchemeColor.surfaceTint,
+    chipSelectedSchemeColor: SchemeColor.surfaceTint,
+    chipDeleteIconSchemeColor: SchemeColor.onSurface,
+    chipRadius: 10.0,
+    alignedDropdown: true,
+    tooltipRadius: 10,
+    tooltipSchemeColor: SchemeColor.outlineVariant,
+    useInputDecoratorThemeInDialogs: true,
+    snackBarRadius: 10,
+    snackBarElevation: 20,
+    appBarBackgroundSchemeColor: SchemeColor.onTertiary,
+    appBarScrolledUnderElevation: 20.0,
+    tabBarUnselectedItemOpacity: 1.00,
+    tabBarIndicatorWeight: 5,
+    tabBarIndicatorTopRadius: 9,
+    tabBarDividerColor: Color(0x00000000),
 
-    // menu theme
-    drawerTheme: const DrawerThemeData(
-      backgroundColor: Color(0xfffafbfd),
-    ),
-
-    //page theme
-    scaffoldBackgroundColor: const Color(0xffedf1f2),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: Color(0xffc4def7),
-      foregroundColor: Color(0xff538fd8),
-      elevation: 0,
-      splashColor: Color(0xff355c8b),
-    ),
-
-    // icon theme
-    iconTheme: const IconThemeData(
-      color: Colors.black,
-    ),
-  );
+    drawerRadius: 10.0,
+    drawerWidth: 300.0,
+    drawerIndicatorRadius: 20.0,
+    drawerIndicatorSchemeColor: SchemeColor.onTertiary,
 
 
 
-  static ThemeData mainDarkTheme = ThemeData.dark().copyWith(
-
-
-    //font theme
-    textTheme: const TextTheme(
-
-        bodySmall: TextStyle(
-          color: Colors.white,
-        ),
-        bodyLarge: TextStyle(
-          color: Colors.white,
-        ),
-        bodyMedium: TextStyle(
-          color: Colors.white,
-        ),
-        titleLarge: TextStyle(
-          color: Colors.white,
-        ),
-        titleMedium: TextStyle(
-          color: Colors.white,
-        ),
-        titleSmall: TextStyle(
-          //灰色
-          color: Colors.white,
-        )),
-
-    listTileTheme: const ListTileThemeData(
-      titleTextStyle: TextStyle(
-        color: Colors.white,
-      ),
-      subtitleTextStyle: TextStyle(
-        color: Color(0xff999999),
-      ),
-      iconColor: Colors.white,
-    ),
-
-    //app bar theme
-    appBarTheme: const AppBarTheme(
-      color: Color(0xff292a3c),
-      centerTitle: true,
-      titleTextStyle: TextStyle(
-        color: Colors.white,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
-      iconTheme: IconThemeData(
-        color: Colors.white,
-      ),
-    ),
-
-    // menu theme
-    drawerTheme: const DrawerThemeData(
-      backgroundColor: Color(0xff292a3c),
-    ),
-
-    //page theme
-    scaffoldBackgroundColor: const Color(0xff141527),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: Color(0xff417368),
-      foregroundColor: Colors.white,
-      elevation: 0,
-      splashColor: Color(0xff6cbfad),
-    ),
-
-    // icon theme
-    iconTheme: const IconThemeData(
-      color: Colors.white,
-    ),
-  );*/
-
-
-  static FlexSchemeColor lightScheme = FlexSchemeColor.from(
-    primary: const Color(0xffffffff),
-
-
+    bottomSheetElevation: 20.0,
+    bottomSheetModalElevation: 20.0,
+    navigationBarSelectedLabelSchemeColor: SchemeColor.onSurface,
+    navigationBarUnselectedLabelSchemeColor: SchemeColor.onSurface,
+    navigationBarMutedUnselectedLabel: false,
+    navigationBarSelectedIconSchemeColor: SchemeColor.onSurface,
+    navigationBarUnselectedIconSchemeColor: SchemeColor.onSurface,
+    navigationBarMutedUnselectedIcon: false,
+    navigationBarIndicatorSchemeColor: SchemeColor.onTertiary,
+    navigationBarIndicatorOpacity: 1.00,
+    navigationBarIndicatorRadius: 16.0,
+    navigationBarBackgroundSchemeColor: SchemeColor.onTertiary,
+    navigationBarElevation: 24.0,
+    navigationRailSelectedLabelSchemeColor: SchemeColor.onSurface,
+    navigationRailUnselectedLabelSchemeColor: SchemeColor.tertiary,
+    navigationRailSelectedIconSchemeColor: SchemeColor.onBackground,
+    navigationRailUnselectedIconSchemeColor: SchemeColor.tertiary,
 
   );
 
-  static ThemeData mainTheme = FlexThemeData.light( useMaterial3: true, fontFamily: 'HuaWeiSans' ,scheme: FlexScheme.sakura,
-    subThemesData: const FlexSubThemesData(
-      interactionEffects: false,
-      tintedDisabledControls: false,
-      blendOnColors: false,
-      useTextTheme: true,
-      inputDecoratorBorderType: FlexInputBorderType.underline,
-      inputDecoratorUnfocusedBorderIsColored: false,
-      alignedDropdown: true,
-      tooltipRadius: 4,
-      tooltipSchemeColor: SchemeColor.inverseSurface,
-      tooltipOpacity: 0.9,
-      useInputDecoratorThemeInDialogs: true,
-      snackBarElevation: 6,
-      snackBarBackgroundSchemeColor: SchemeColor.inverseSurface,
-      navigationBarSelectedLabelSchemeColor: SchemeColor.onSurface,
-      navigationBarUnselectedLabelSchemeColor: SchemeColor.onSurface,
-      navigationBarMutedUnselectedLabel: false,
-      navigationBarSelectedIconSchemeColor: SchemeColor.onSurface,
-      navigationBarUnselectedIconSchemeColor: SchemeColor.onSurface,
-      navigationBarMutedUnselectedIcon: false,
-      navigationBarIndicatorSchemeColor: SchemeColor.secondaryContainer,
-      navigationBarIndicatorOpacity: 1.00,
-      navigationRailSelectedLabelSchemeColor: SchemeColor.onSurface,
-      navigationRailUnselectedLabelSchemeColor: SchemeColor.onSurface,
-      navigationRailMutedUnselectedLabel: false,
-      navigationRailSelectedIconSchemeColor: SchemeColor.onSurface,
-      navigationRailUnselectedIconSchemeColor: SchemeColor.onSurface,
-      navigationRailMutedUnselectedIcon: false,
-      navigationRailIndicatorSchemeColor: SchemeColor.secondaryContainer,
-      navigationRailIndicatorOpacity: 1.00,
-      navigationRailBackgroundSchemeColor: SchemeColor.surface,
-      navigationRailLabelType: NavigationRailLabelType.none,
+  static ThemeData mainTheme = FlexThemeData.light(
+    fontFamily: "HuaWeiSans",
+    scheme: FlexScheme.blue,
+    surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffoldVariantDialog,
+    blendLevel: 36,
+    lightIsWhite: true,
+    swapColors: true,
+    surfaceTint: const Color(0xff1976d2),
+    subThemesData: subThemesData,
+
+    keyColors: const FlexKeyColors(
+      useSecondary: true,
+      useTertiary: true,
+      keepPrimary: true,
+      keepSecondary: true,
+      keepTertiary: true,
+      keepPrimaryContainer: true,
+      keepSecondaryContainer: true,
+      keepTertiaryContainer: true,
     ),
-    keyColors: const FlexKeyColors(),
-    visualDensity: FlexColorScheme.comfortablePlatformDensity,
-
-    swapLegacyOnMaterial3: true,);
-  static ThemeData mainDarkTheme = FlexThemeData.dark( useMaterial3: true, fontFamily: 'HuaWeiSans',
-    scheme: FlexScheme.sakura,
-    usedColors: 7,
-    surfaceMode: FlexSurfaceMode.highSurfaceLowScaffold,
-
-
-    appBarStyle: FlexAppBarStyle.background,
-
-    darkIsTrueBlack: true,
-    subThemesData: const FlexSubThemesData(
-      useTextTheme: true,
-      elevatedButtonSchemeColor: SchemeColor.onPrimaryContainer,
-      elevatedButtonSecondarySchemeColor: SchemeColor.primaryContainer,
-      segmentedButtonSchemeColor: SchemeColor.primary,
-      inputDecoratorSchemeColor: SchemeColor.primary,
-
-      inputDecoratorUnfocusedHasBorder: false,
-      inputDecoratorPrefixIconSchemeColor: SchemeColor.primary,
-      fabSchemeColor: SchemeColor.tertiary,
-      useInputDecoratorThemeInDialogs: true,
-      snackBarBackgroundSchemeColor: SchemeColor.inverseSurface,
-      drawerIndicatorSchemeColor: SchemeColor.primary,
-      bottomNavigationBarMutedUnselectedLabel: false,
-      bottomNavigationBarMutedUnselectedIcon: false,
-      bottomNavigationBarBackgroundSchemeColor: SchemeColor.surfaceVariant,
-      navigationBarSelectedLabelSchemeColor: SchemeColor.primary,
-      navigationBarMutedUnselectedLabel: false,
-      navigationBarSelectedIconSchemeColor: SchemeColor.background,
-      navigationBarMutedUnselectedIcon: false,
-      navigationBarIndicatorSchemeColor: SchemeColor.primary,
-
-      navigationBarBackgroundSchemeColor: SchemeColor.background,
-
-      navigationRailSelectedLabelSchemeColor: SchemeColor.primary,
-      navigationRailMutedUnselectedLabel: false,
-      navigationRailSelectedIconSchemeColor: SchemeColor.background,
-      navigationRailMutedUnselectedIcon: false,
-      navigationRailIndicatorSchemeColor: SchemeColor.primary,
-    ),
-    visualDensity: FlexColorScheme.comfortablePlatformDensity,
+    visualDensity: VisualDensity.standard,
+    useMaterial3: true,
     swapLegacyOnMaterial3: true,
-
-
   );
+
+  static ThemeData mainDarkTheme = FlexThemeData.dark(
+    fontFamily: "HuaWeiSans",
+    scheme: FlexScheme.green,
+    surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+    blendLevel: 40,
+    appBarElevation: 20.0,
+    darkIsTrueBlack: true,
+    swapColors: true,
+    surfaceTint: const Color(0xff2196f3),
+    subThemesData: subThemesData,
+    keyColors: const FlexKeyColors(
+      useSecondary: true,
+      useTertiary: true,
+    ),
+    visualDensity: VisualDensity.standard,
+    useMaterial3: true,
+    swapLegacyOnMaterial3: true,
+  );
+
+
+
 
 
 
