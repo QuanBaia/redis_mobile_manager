@@ -27,6 +27,11 @@ class Content {
   static const String drawerItemAbout = "home_drawer_item_about";
   static const String drawerItemSetting = "home_drawer_item_setting";
 
+  // add part
+  static const String addHostBarTitle = "add_host_bar_title";
+
+
+
 
 
 

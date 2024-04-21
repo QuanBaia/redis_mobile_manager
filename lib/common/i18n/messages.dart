@@ -20,6 +20,9 @@ class Messages extends Translations {
       Content.drawerItemAbout : "关于",
       Content.drawerItemSetting : "设置",
 
+      // Add Page
+      Content.addHostBarTitle : "添加",
+
     },
     "zh_HK":{
       // Home Page
@@ -35,6 +38,9 @@ class Messages extends Translations {
       Content.drawerItemLog : "日誌",
       Content.drawerItemAbout : "關於",
       Content.drawerItemSetting : "設置",
+
+      // Add Page
+      Content.addHostBarTitle : "新增",
 
 
     },
@@ -52,6 +58,9 @@ class Messages extends Translations {
       Content.drawerItemLog : "Logs",
       Content.drawerItemAbout : "About",
       Content.drawerItemSetting : "Setting",
+
+      // Add Page
+      Content.addHostBarTitle : "Add",
     },
     "ja_JP":{
       // Home Page
@@ -67,6 +76,9 @@ class Messages extends Translations {
       Content.drawerItemLog : "ログス",
       Content.drawerItemAbout : "について",
       Content.drawerItemSetting : "設定",
+
+      // Add Page
+      Content.addHostBarTitle : "追加",
 
     },
 
