@@ -10,4 +10,7 @@ export 'package:redis_mobile_manager/common/bindings/menu_page_controller.dart';
 export '../home/drawer/menu/menu_view.dart';
 export 'package:animations/animations.dart';
 
+
 export 'setting/setting_view.dart';
+export 'logs/logs_view.dart';
+export 'about/about_view.dart';

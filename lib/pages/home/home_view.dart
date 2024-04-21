@@ -32,7 +32,8 @@ class HomePage extends StatelessWidget {
     Map<String, Widget> pages = {
       'home': buildHomePageBody(),
       'settings': const SettingPage(),
-
+      'logs': const LogsView(),
+      'about': const AboutView(),
     };
 
 
