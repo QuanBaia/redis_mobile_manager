@@ -1,10 +1,6 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:redis_mobile_manager/common/bindings/menu_page_controller.dart';
-import 'package:redis_mobile_manager/pages/drawer/menu/menu_view.dart';
-import '../../common/i18n/content.dart';
-import 'setting/setting_view.dart';
+
 import 'index.dart';
 
 class HomePage extends StatelessWidget {

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../common/bindings/menu_page_controller.dart';
-import 'index.dart';
+import '../../index.dart';
 
 class MenuPage extends StatelessWidget {
-  MenuPage({Key? key}) : super(key: key);
+  MenuPage({super.key});
 
   final MenuPageController _menuPageController = Get.find();
 

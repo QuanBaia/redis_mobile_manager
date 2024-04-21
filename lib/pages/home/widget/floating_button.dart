@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:redis_mobile_manager/common/bindings/menu_page_controller.dart';
-import 'package:redis_mobile_manager/pages/drawer/menu/index.dart';
+
+import '../../../common/i18n/content.dart';
+
 
 class FloatingButton extends StatelessWidget {
   FloatingButton({super.key});
