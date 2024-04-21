@@ -16,9 +16,6 @@ class Global {
       SystemChrome.setSystemUIOverlayStyle(style);
     }
 
-
-
-
     // 加载service
     Get.lazyPut(() => SharedService());
 

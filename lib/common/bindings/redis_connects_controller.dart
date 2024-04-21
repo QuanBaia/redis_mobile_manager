@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'package:redis_mobile_manager/common/service/shared_service.dart';
 import '../vo/redis_vo_entity.dart';
@@ -31,10 +33,9 @@ class RedisConnectsController extends GetxController {
   // 初始化的时候，从本地获取Redis连接
   @override
   void onInit() async {
-    // 计时毫米级，打印日志
-    DateTime now = DateTime.now();
-    int microsecond = now.microsecond;
-    logger.d("find all redis connect from local storage start ... Now: $now");
+
+    Stopwatch stopwatch = Stopwatch()..start();
+    logger.d("find all redis connect from local storage start ... ");
     //查询所有Redis连接到redisVoList
     List<Map<String, dynamic>> redisVoListJson = await sharedService
         .getListValues(key);
@@ -45,9 +46,9 @@ class RedisConnectsController extends GetxController {
         update();
       }
     }
-    now = DateTime.now();
-    double ms = (now.microsecond - microsecond) / 1000;
-    logger.d("find all redis connect from local storage end ... Time: ${-ms} ms");
+    //等待 毫秒 = 秒
+    stopwatch.stop();
+    logger.d("find all redis connect from local storage end ... Time: ${stopwatch.elapsed.inMilliseconds} ms");
 
 
     super.onInit();
