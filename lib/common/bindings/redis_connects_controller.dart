@@ -7,9 +7,11 @@ import 'package:logger/logger.dart';
 
 class RedisConnectsController extends GetxController {
   //全局变量，用于存储Redis连接
-  RxList<RedisVoEntity> redisVoList = <RedisVoEntity>[].obs;
-  String key = "redis_connect";
-  SharedService sharedService = Get.find();
+  final RxList<RedisVoEntity> _redisVoList = <RedisVoEntity>[].obs;
+  final String _key = "redis_connect";
+  final SharedService _sharedService = Get.find();
+
+  get key => _key;
 
   var logger = Logger(
     printer: PrettyPrinter(),
@@ -17,16 +19,20 @@ class RedisConnectsController extends GetxController {
 
   // 添加Redis连接
   addOrUpdateRedisVo(RedisVoEntity redisVo) {
-    redisVoList.add(redisVo);
-    sharedService.addListValueOrUpdate(key, redisVo.toJson());
+    _redisVoList.add(redisVo);
+    _sharedService.addListValueOrUpdate(_key, redisVo.toJson());
     update();
   }
 
   // 删除Redis连接
   deleteRedisVo(RedisVoEntity redisVo) {
-    redisVoList.remove(redisVo);
-    sharedService.removeListValue(key, redisVo.id ?? 0);
+    _redisVoList.remove(redisVo);
+    _sharedService.removeListValue(_key, redisVo.id ?? "");
     update();
+  }
+
+  getRedisVoAll(){
+    return _redisVoList;
   }
 
 
@@ -37,19 +43,22 @@ class RedisConnectsController extends GetxController {
     Stopwatch stopwatch = Stopwatch()..start();
     logger.d("find all redis connect from local storage start ... ");
     //查询所有Redis连接到redisVoList
-    List<Map<String, dynamic>> redisVoListJson = await sharedService
-        .getListValues(key);
+    List<Map<String, dynamic>> redisVoListJson = await _sharedService
+        .getListValues(_key);
     if (redisVoListJson != null || redisVoListJson.isNotEmpty) {
       for (var item in redisVoListJson) {
         RedisVoEntity redisVo = RedisVoEntity.fromJson(item);
-        redisVoList.add(redisVo);
-        update();
+        _redisVoList.add(redisVo);
       }
     }
     //等待 毫秒 = 秒
     stopwatch.stop();
     logger.d("find all redis connect from local storage end ... Time: ${stopwatch.elapsed.inMilliseconds} ms");
+    update();
 
+    for (var redisVo in _redisVoList) {
+      print("redisVo: ${redisVo.toJson()}");
+    }
 
     super.onInit();
   }

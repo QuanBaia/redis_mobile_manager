@@ -31,6 +31,37 @@ class Content {
   static const String addHostBarTitle = "add_host_bar_title";
 
 
+  // from field
+  static const String addHostFromFieldHost = "add_host_from_field_host";
+  static const String addHostFromFieldHostName = "add_host_from_field_host_name";
+  static const String addHostFromFieldPort = "add_host_from_field_port";
+  static const String addHostFromFieldAuth = "add_host_from_field_auth";
+  static const String addHostFromFieldUserName = "add_host_from_field_user_name";
+  static const String addHostFromFieldConnectionName = "add_host_from_field_connection_name";
+  static const String addHostFromFieldInsertTime = "add_host_from_field_insert_time";
+  static const String addHostFromFieldLastConnectTime = "add_host_from_field_last_connect_time";
+  // to field
+  static const String addHostToFieldHost = "add_host_to_field_host";
+  static const String addHostToFieldHostName = "add_host_to_field_host_name";
+  static const String addHostToFieldAuth = "add_host_to_field_auth";
+  static const String addHostToFieldUserName = "add_host_to_field_user_name";
+  static const String addHostToFieldConnectionName = "add_host_to_field_connection_name";
+  static const String addHostToFieldInsertTime = "add_host_to_field_insert_time";
+  static const String addHostToFieldLastConnectTime = "add_host_to_field_last_connect_time";
+  // save button
+  static const String addHostSaveButton = "add_host_save_button";
+  // cancel button
+  static const String addHostCancelButton = "add_host_cancel_button";
+
+  // validation
+  static const String requiredField = " required_field";
+  static const String isIp = " is_ip";
+
+
+
+
+
+
 
 
 

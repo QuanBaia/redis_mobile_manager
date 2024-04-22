@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
+import 'package:redis_mobile_manager/common/utils/date_time_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedService extends GetxService {
@@ -8,6 +9,7 @@ class SharedService extends GetxService {
       SharedPreferences.getInstance();
 
   get sharedPreferences => _preferences;
+
 
   void addListValueOrUpdate(String key, dynamic value) {
     _preferences.then((preferences) {
@@ -20,20 +22,20 @@ class SharedService extends GetxService {
       for (var i = 0; i < list.length; i++) {
         var item = list[i];
         if (jsonDecode(item)['id'] == value['id']) {
-          list[i] = jsonEncode(value);
+          list[i] = jsonEncode(value,toEncodable: DateTimeUtils.dateTimeEncode);
           exist = true;
           return;
         }
       }
       if (!exist) {
-        list.add(jsonEncode(value));
+        list.add(jsonEncode(value,toEncodable: DateTimeUtils.dateTimeEncode));
       }
       // 保存到SharedPreferences
       preferences.setStringList(key, list);
     });
   }
 
-  void removeListValue(String key, int id) {
+  void removeListValue(String key, String id) {
     _preferences.then((preferences) {
       // 先获取集合
       var list = preferences.getStringList(key);
@@ -48,7 +50,7 @@ class SharedService extends GetxService {
     });
   }
 
-  Future<Map<String, dynamic>> getListValue(String key, int id) async {
+  Future<Map<String, dynamic>> getListValue(String key, String id) async {
     final preferences = await _preferences;
     var list = preferences.getStringList(key);
     if (list == null) {
@@ -93,6 +95,14 @@ class SharedService extends GetxService {
   }
 
   void removeValue(key) {
+    _preferences.then((preferences) {
+      preferences.remove(key);
+    });
+  }
+
+
+
+  void removeKey(String key) {
     _preferences.then((preferences) {
       preferences.remove(key);
     });

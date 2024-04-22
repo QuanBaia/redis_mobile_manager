@@ -3,7 +3,7 @@ import 'package:redis_mobile_manager/common/vo/redis_vo_entity.dart';
 
 RedisVoEntity $RedisVoEntityFromJson(Map<String, dynamic> json) {
   final RedisVoEntity redisVoEntity = RedisVoEntity();
-  final int? id = jsonConvert.convert<int>(json['id']);
+  final String? id = jsonConvert.convert<String>(json['id']);
   if (id != null) {
     redisVoEntity.id = id;
   }
@@ -14,6 +14,10 @@ RedisVoEntity $RedisVoEntityFromJson(Map<String, dynamic> json) {
   final String? hostName = jsonConvert.convert<String>(json['hostName']);
   if (hostName != null) {
     redisVoEntity.hostName = hostName;
+  }
+  final int? port = jsonConvert.convert<int>(json['port']);
+  if (port != null) {
+    redisVoEntity.port = port;
   }
   final String? auth = jsonConvert.convert<String>(json['auth']);
   if (auth != null) {
@@ -28,6 +32,14 @@ RedisVoEntity $RedisVoEntityFromJson(Map<String, dynamic> json) {
   if (connectionName != null) {
     redisVoEntity.connectionName = connectionName;
   }
+  final DateTime? insertTime = jsonConvert.convert<DateTime>(json['insertTime']);
+  if(insertTime!= null){
+    redisVoEntity.insertTime = insertTime;
+  }
+  final DateTime? lastConnectTime = jsonConvert.convert<DateTime>(json['lastConnectTime']);
+  if(lastConnectTime!= null){
+    redisVoEntity.lastConnectTime = lastConnectTime;
+  }
   return redisVoEntity;
 }
 
@@ -36,27 +48,36 @@ Map<String, dynamic> $RedisVoEntityToJson(RedisVoEntity entity) {
   data['id'] = entity.id;
   data['host'] = entity.host;
   data['hostName'] = entity.hostName;
+  data['port'] = entity.port;
   data['auth'] = entity.auth;
   data['userName'] = entity.userName;
   data['connectionName'] = entity.connectionName;
+  data['insertTime'] = entity.insertTime;
+  data['lastConnectTime'] = entity.lastConnectTime;
   return data;
 }
 
 extension RedisVoEntityExtension on RedisVoEntity {
   RedisVoEntity copyWith({
-    int? id,
+    String? id,
     String? host,
     String? hostName,
+    int? port,
     String? auth,
     String? userName,
     String? connectionName,
+    DateTime? insertTime,
+    DateTime? lastConnectTime,
   }) {
     return RedisVoEntity()
       ..id = id ?? this.id
       ..host = host ?? this.host
       ..hostName = hostName ?? this.hostName
+      ..port = port ?? this.port
       ..auth = auth ?? this.auth
       ..userName = userName ?? this.userName
-      ..connectionName = connectionName ?? this.connectionName;
+      ..connectionName = connectionName ?? this.connectionName
+      ..insertTime = insertTime ?? this.insertTime
+      ..lastConnectTime = lastConnectTime ?? this.lastConnectTime;
   }
 }
