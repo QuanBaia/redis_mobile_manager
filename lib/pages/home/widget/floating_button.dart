@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:redis_mobile_manager/common/vo/redis_vo_entity.dart';
 import 'package:redis_mobile_manager/pages/home/add/add_view.dart';
 import '../index.dart';
 
@@ -7,8 +8,10 @@ class FloatingButton extends StatelessWidget {
   FloatingButton({super.key});
 
   final MenuPageController _menuLogic = Get.find();
+  final HomeLogic _homeLogic = Get.find();
 
-  Widget _buildHomeFloatingButton() {
+  Widget _buildHomeFloatingButton(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Tooltip(
       message: Content.homePageAddButtonHint.tr,
       child: OpenContainer(
@@ -16,9 +19,7 @@ class FloatingButton extends StatelessWidget {
           return Container(
             width: 56,
             height: 56,
-            decoration: const BoxDecoration(
-              color: Color(0xff07444b),
-            ),
+            color: colorScheme.primary,
             child: const Icon(
               Icons.add,
               size: 24,
@@ -26,27 +27,33 @@ class FloatingButton extends StatelessWidget {
             ),
           );
         },
-        openBuilder: (BuildContext context, void Function({Object? returnValue}) action) {
-          return const AddPage();
+        openBuilder: (BuildContext context,
+            void Function({Object? returnValue}) action) {
+          return AddPage();
         },
         tappable: true,
         transitionType: ContainerTransitionType.fade,
         transitionDuration: const Duration(milliseconds: 500),
-        routeSettings: const RouteSettings(arguments: "你好") ,
+        routeSettings: RouteSettings(arguments: RedisVoEntity()),
         openColor: Colors.transparent,
         closedColor: Colors.transparent,
-
-
+        onClosed: (value) {
+          if (value != null) {
+            _homeLogic.addOrUpdateRedisVo(
+                RedisVoEntity.fromJson(value as Map<String, dynamic>));
+          }
+        },
       ),
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
     return Obx(() {
       switch (_menuLogic.selectedIndex) {
         case 0:
-          return _buildHomeFloatingButton();
+          return _buildHomeFloatingButton(context);
         case 1:
           return Container();
         case 2:
@@ -54,7 +61,7 @@ class FloatingButton extends StatelessWidget {
         case 3:
           return Container();
         default:
-          return _buildHomeFloatingButton();
+          return _buildHomeFloatingButton(context);
       }
     });
   }

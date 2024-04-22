@@ -22,8 +22,6 @@ class MyApp extends StatelessWidget {
       locale: Get.deviceLocale,
       fallbackLocale: const Locale("en", "US"),
       localeResolutionCallback: (locale, supportedLocales) {
-
-
         Moment.setGlobalLocalization(DateLocal.getLocalization(locale));
         //语言变化的时候修改时间变换
         //Moment.setGlobalLocalization(locale);
