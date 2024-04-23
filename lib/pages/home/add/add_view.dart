@@ -5,10 +5,9 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
-import 'package:redis_mobile_manager/common/bindings/redis_connects_controller.dart';
 import 'package:uuid/v4.dart';
 
-import 'index.dart';
+import '../index.dart';
 
 class AddPage extends StatelessWidget {
   AddPage({super.key});

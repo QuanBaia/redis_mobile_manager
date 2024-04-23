@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:redis_mobile_manager/common/vo/redis_vo_entity.dart';
@@ -7,7 +8,6 @@ import '../index.dart';
 class FloatingButton extends StatelessWidget {
   FloatingButton({super.key});
 
-  final MenuPageController _menuLogic = Get.find();
   final HomeLogic _homeLogic = Get.find();
 
   Widget _buildHomeFloatingButton(BuildContext context) {
@@ -51,7 +51,7 @@ class FloatingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      switch (_menuLogic.selectedIndex) {
+      switch (_homeLogic.state.selectedIndex) {
         case 0:
           return _buildHomeFloatingButton(context);
         case 1:
@@ -65,4 +65,6 @@ class FloatingButton extends StatelessWidget {
       }
     });
   }
+
+
 }

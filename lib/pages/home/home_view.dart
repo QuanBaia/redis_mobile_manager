@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
@@ -8,7 +9,6 @@ import 'index.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-  final MenuPageController _menuPageController = Get.find();
   final _logic = Get.find<HomeLogic>();
   final _sharedService = Get.find<SharedService>();
 
@@ -145,7 +145,7 @@ class HomePage extends StatelessWidget {
               child: child,
             );
           },
-          child: pages[_menuPageController.getPageName()],
+          child: pages[_logic.getPageName()],
         );
       }),
     );

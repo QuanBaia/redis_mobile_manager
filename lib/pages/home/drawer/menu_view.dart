@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../index.dart';
+import '../index.dart';
 
 class MenuPage extends StatelessWidget {
   MenuPage({super.key});
 
-  final MenuPageController _menuPageController = Get.find();
+  final HomeLogic  _homeLogic  = Get.find();
 
   Widget _buildDrawerDestination(String text, Icon icon, Icon selectedIcon) {
     return NavigationDrawerDestination(
@@ -21,9 +21,11 @@ class MenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       return NavigationDrawer(
-        selectedIndex: _menuPageController.selectedIndex,
-        onDestinationSelected: (index) =>
-            _menuPageController.changeSelectedIndex(index),
+        selectedIndex: _homeLogic.state.selectedIndex,
+        onDestinationSelected: (index) {
+          _homeLogic.state.selectedIndex = index;
+          Get.back();
+        },
         children: [
 
           ListTile(

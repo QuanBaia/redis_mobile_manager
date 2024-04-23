@@ -33,6 +33,20 @@ class HomeLogic extends GetxController {
   }
 
 
+  String getPageName() {
+    switch (state.selectedIndex) {
+      case 0:
+        return "home";
+      case 1:
+        return "logs";
+      case 2:
+        return "about";
+      case 3:
+        return "settings";
+      default:
+        return "Home";
+    }
+  }
 
 
 
