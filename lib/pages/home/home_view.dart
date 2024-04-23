@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:redis_mobile_manager/common/service/shared_service.dart';
-import 'package:shimmer/shimmer.dart';
 
 import 'index.dart';
 
@@ -11,38 +10,6 @@ class HomePage extends StatelessWidget {
   HomePage({super.key});
   final _logic = Get.find<HomeLogic>();
   final _sharedService = Get.find<SharedService>();
-
-
-
-
-  Widget _buildLoading(BuildContext context) {
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
-    return ListView.builder(
-      itemCount: 7,
-      itemBuilder: (BuildContext context, int index) {
-        return Shimmer.fromColors(
-          baseColor: colorScheme.primary,
-          highlightColor: colorScheme.primaryContainer,
-          direction: ShimmerDirection.ltr,
-          child: ListTile(
-              title: Container(
-                height: 10,
-                color: colorScheme.primary,
-              ),
-              subtitle: Container(
-                height: 10,
-                color: colorScheme.primary,
-              ),
-              trailing: Container(
-                height: 40,
-                width: 40,
-                color: colorScheme.primary,
-              )),
-        );
-      },
-    );
-  }
-
 
   Widget _redisListView(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
@@ -100,7 +67,7 @@ class HomePage extends StatelessWidget {
     Map<String, Widget> pages = {
       'home': Obx(() {
         return _logic.state.isLoading.value
-            ? _buildLoading(context)
+            ? const LoadingListView()
             : _buildHomePageBody(context);
       }),
       'settings': const SettingPage(),

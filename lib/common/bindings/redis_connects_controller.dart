@@ -1,9 +1,8 @@
-import 'dart:io';
-
 import 'package:get/get.dart';
-import 'package:redis_mobile_manager/common/service/shared_service.dart';
-import '../vo/redis_vo_entity.dart';
 import 'package:logger/logger.dart';
+import 'package:redis_mobile_manager/common/service/shared_service.dart';
+
+import '../vo/redis_vo_entity.dart';
 
 class RedisConnectsController extends GetxController {
   //全局变量，用于存储Redis连接
@@ -23,7 +22,6 @@ class RedisConnectsController extends GetxController {
     _sharedService.addListValueOrUpdate(_key, redisVo.toJson());
     update();
   }
-
   // 删除Redis连接
   deleteRedisVo(RedisVoEntity redisVo) {
     _redisVoList.remove(redisVo);

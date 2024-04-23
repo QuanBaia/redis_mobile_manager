@@ -15,7 +15,7 @@ class HomeLogic extends GetxController {
     state.isLoading.value = true;
     super.onInit();
     state.redisVoList = redisConnectsController.getRedisVoAll();
-    state.isLoading.value = false;
+    state.isLoading.value = true;
     update();
   }
 

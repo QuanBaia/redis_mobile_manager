@@ -1,6 +1,8 @@
 library home_page;
 
 export './widget/floating_button.dart';
+export './widget/loading_list_view.dart';
+
 export './widget/empty_view.dart';
 export './home_logic.dart';
 export '../../common/i18n/content.dart';

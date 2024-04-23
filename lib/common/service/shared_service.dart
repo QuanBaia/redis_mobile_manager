@@ -5,8 +5,7 @@ import 'package:redis_mobile_manager/common/utils/date_time_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedService extends GetxService {
-  final Future<SharedPreferences> _preferences =
-      SharedPreferences.getInstance();
+  final Future<SharedPreferences> _preferences = SharedPreferences.getInstance();
 
   get sharedPreferences => _preferences;
 
