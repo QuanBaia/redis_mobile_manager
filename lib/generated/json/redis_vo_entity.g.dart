@@ -52,8 +52,8 @@ Map<String, dynamic> $RedisVoEntityToJson(RedisVoEntity entity) {
   data['auth'] = entity.auth;
   data['userName'] = entity.userName;
   data['connectionName'] = entity.connectionName;
-  data['insertTime'] = entity.insertTime;
-  data['lastConnectTime'] = entity.lastConnectTime;
+  data['insertTime'] = entity.insertTime?.toIso8601String();
+  data['lastConnectTime'] = entity.lastConnectTime?.toIso8601String();
   return data;
 }
 

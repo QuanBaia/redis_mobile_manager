@@ -13,7 +13,8 @@ class Content {
   //菜单栏
   static const String homePageMenu = "home_page_menu";
 
-
+  // home page action
+  static const String homePageClearRedisVoList = "home_page_clear_redis_vo_list";
 
 
   // home drawer menu
@@ -21,14 +22,16 @@ class Content {
   static const String drawerTitle = "home_drawer_title";
   //副标题
   static const String drawerSubTitle = "home_drawer_sub_title";
-  // about page
+  //菜单项
   static const String drawerItemHome = "home_drawer_item_home";
   static const String drawerItemLog = "home_drawer_item_log";
   static const String drawerItemAbout = "home_drawer_item_about";
   static const String drawerItemSetting = "home_drawer_item_setting";
 
-  // add part
+  // add page
+  // 标题
   static const String addHostBarTitle = "add_host_bar_title";
+  static const String addHostBarTitleEdit = "add_host_bar_title_edit";
 
 
   // from field
@@ -56,6 +59,11 @@ class Content {
   // validation
   static const String requiredField = " required_field";
   static const String isIp = " is_ip";
+
+
+  // tag
+  static const String tagDelete = "tag_delete";
+  static const String tagEdit = "tag_edit";
 
 
 

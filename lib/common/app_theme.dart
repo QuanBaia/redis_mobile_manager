@@ -4,11 +4,7 @@ import 'package:flutter/material.dart';
 // app 主题管理
 class AppTheme {
   static FlexSubThemesData subThemesData = const FlexSubThemesData(
-    blendOnLevel: 4,
-    useFlutterDefaults: true,
-    useTextTheme: true,
-    defaultRadius: 30.0,
-    adaptiveRadius: FlexAdaptive.all(),
+
     thinBorderWidth: 2.0,
     filledButtonRadius: 10.0,
     elevatedButtonRadius: 10.0,
@@ -17,6 +13,8 @@ class AppTheme {
     toggleButtonsBorderWidth: 1.0,
     segmentedButtonRadius: 10.0,
     segmentedButtonBorderWidth: 1.0,
+
+
     switchSchemeColor: SchemeColor.tertiary,
     switchThumbSchemeColor: SchemeColor.tertiaryContainer,
     switchThumbFixedSize: true,
@@ -45,10 +43,15 @@ class AppTheme {
     snackBarElevation: 20,
     appBarBackgroundSchemeColor: SchemeColor.onTertiary,
     appBarScrolledUnderElevation: 20.0,
+
+
+
     tabBarUnselectedItemOpacity: 1.00,
     tabBarIndicatorWeight: 5,
     tabBarIndicatorTopRadius: 9,
-    tabBarDividerColor: Color(0x00000000),
+
+
+
     drawerRadius: 10.0,
     drawerWidth: 300.0,
     drawerIndicatorRadius: 20.0,
@@ -114,6 +117,7 @@ class AppTheme {
         useSecondary: true,
         useTertiary: true,
       ),
+
       visualDensity: VisualDensity.standard,
       useMaterial3: true,
       swapLegacyOnMaterial3: true,

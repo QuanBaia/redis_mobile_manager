@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:redis_mobile_manager/common/utils/date_time_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedService extends GetxService {
@@ -21,13 +20,13 @@ class SharedService extends GetxService {
       for (var i = 0; i < list.length; i++) {
         var item = list[i];
         if (jsonDecode(item)['id'] == value['id']) {
-          list[i] = jsonEncode(value,toEncodable: DateTimeUtils.dateTimeEncode);
+          list[i] = jsonEncode(value);
           exist = true;
-          return;
+          break;
         }
       }
       if (!exist) {
-        list.add(jsonEncode(value,toEncodable: DateTimeUtils.dateTimeEncode));
+        list.add(jsonEncode(value));
       }
       // 保存到SharedPreferences
       preferences.setStringList(key, list);

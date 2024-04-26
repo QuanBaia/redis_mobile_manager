@@ -18,6 +18,15 @@ class RedisConnectsController extends GetxController {
 
   // 添加Redis连接
   addOrUpdateRedisVo(RedisVoEntity redisVo) {
+    // 查找是否存在相同的Redis连接
+    for(var i = 0; i < _redisVoList.length; i++){
+      if(_redisVoList[i].id == redisVo.id){
+        _redisVoList[i] = redisVo;
+        _sharedService.addListValueOrUpdate(_key, redisVo.toJson());
+        update();
+        return;
+      }
+    }
     _redisVoList.add(redisVo);
     _sharedService.addListValueOrUpdate(_key, redisVo.toJson());
     update();
@@ -28,9 +37,20 @@ class RedisConnectsController extends GetxController {
     _sharedService.removeListValue(_key, redisVo.id ?? "");
     update();
   }
+  // 按照index删除Redis连接
+  deleteRedisVoByIndex(int index) {
+    _redisVoList.removeAt(index);
+    update();
+  }
 
   getRedisVoAll(){
     return _redisVoList;
+  }
+
+
+  // 删除所有Redis连接
+  deleteAllRedisVo() {
+    _redisVoList.clear();
   }
 
 

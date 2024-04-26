@@ -19,101 +19,103 @@ class AddPage extends StatelessWidget {
   Widget _buildFormFields(BuildContext context) {
     return FormBuilder(
       key: _formKey,
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 100),
-        child: Column(
-          children: [
-            FormBuilderTextField(
-              name: 'connectionName',
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
-                labelText: Content.addHostFromFieldConnectionName.tr,
-              ),
-              validator: FormBuilderValidators.compose([
-                FormBuilderValidators.required(
-                    errorText: Content.addHostFromFieldConnectionName.tr +
-                        Content.requiredField.tr),
-              ]),
-              onSaved: (value) => _redisVo.connectionName = value,
+      child: Column(
+        children: [
+          FormBuilderTextField(
+            name: 'connectionName',
+            initialValue: _redisVo.connectionName,
+            textInputAction: TextInputAction.next,
+            decoration: InputDecoration(
+              labelText: Content.addHostFromFieldConnectionName.tr,
             ),
-            const Divider(height: 20),
-            FormBuilderTextField(
-              name: 'hostName',
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
-                labelText: Content.addHostFromFieldHostName.tr,
-              ),
-              validator: FormBuilderValidators.compose([
-                FormBuilderValidators.required(
-                    errorText: Content.addHostFromFieldHostName.tr +
-                        Content.requiredField.tr),
-              ]),
-              onSubmitted: (value) {},
-              onSaved: (value) => _redisVo.hostName = value,
+            validator: FormBuilderValidators.compose([
+              FormBuilderValidators.required(
+                  errorText: Content.addHostFromFieldConnectionName.tr +
+                      Content.requiredField.tr),
+            ]),
+            onSaved: (value) => _redisVo.connectionName = value,
+          ),
+          const Divider(height: 20),
+          FormBuilderTextField(
+            name: 'hostName',
+            initialValue: _redisVo.hostName,
+            textInputAction: TextInputAction.next,
+            decoration: InputDecoration(
+              labelText: Content.addHostFromFieldHostName.tr,
             ),
-            const Divider(height: 20),
-            FormBuilderTextField(
-              name: 'port',
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
-                labelText: Content.addHostFromFieldPort.tr,
-              ),
-              validator: FormBuilderValidators.compose([
-                FormBuilderValidators.required(
-                    errorText: Content.addHostFromFieldPort.tr +
-                        Content.requiredField.tr),
-              ]),
-              // 只允许输入数字
-              keyboardType: TextInputType.number,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              initialValue: "6379",
-              onSubmitted: (value) {},
-              onSaved: (value) => _redisVo.port = int.parse(value ?? "6379"),
+            validator: FormBuilderValidators.compose([
+              FormBuilderValidators.required(
+                  errorText: Content.addHostFromFieldHostName.tr +
+                      Content.requiredField.tr),
+            ]),
+            onSubmitted: (value) {},
+            onSaved: (value) => _redisVo.hostName = value,
+          ),
+          const Divider(height: 20),
+          FormBuilderTextField(
+            name: 'port',
+            initialValue: _redisVo.port == null ? "6379" : _redisVo.port.toString(),
+            textInputAction: TextInputAction.next,
+            decoration: InputDecoration(
+              labelText: Content.addHostFromFieldPort.tr,
             ),
-            const Divider(height: 20),
-            FormBuilderTextField(
-              name: 'host',
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
-                labelText: Content.addHostFromFieldHost.tr,
-              ),
-              validator: FormBuilderValidators.compose([
-                FormBuilderValidators.required(
-                    errorText: Content.addHostFromFieldHost.tr +
-                        Content.requiredField.tr),
-                FormBuilderValidators.ip(errorText: Content.isIp.tr),
-              ]),
-              keyboardType: TextInputType.number,
-              onSubmitted: (value) {},
-              onSaved: (value) => _redisVo.host = value,
+            validator: FormBuilderValidators.compose([
+              FormBuilderValidators.required(
+                  errorText: Content.addHostFromFieldPort.tr +
+                      Content.requiredField.tr),
+            ]),
+            // 只允许输入数字
+            keyboardType: TextInputType.number,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            onSubmitted: (value) {},
+            onSaved: (value) => _redisVo.port = int.parse(value ?? "6379"),
+          ),
+          const Divider(height: 20),
+          FormBuilderTextField(
+            name: 'host',
+            initialValue: _redisVo.host,
+            textInputAction: TextInputAction.next,
+            decoration: InputDecoration(
+              labelText: Content.addHostFromFieldHost.tr,
             ),
-            const Divider(height: 20),
-            FormBuilderTextField(
-              name: 'auth',
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
-                labelText: Content.addHostFromFieldAuth.tr,
-              ),
-              obscureText: true,
-              validator: FormBuilderValidators.compose([]),
-              onSubmitted: (value) {},
-              onSaved: (value) => _redisVo.auth = value,
+            validator: FormBuilderValidators.compose([
+              FormBuilderValidators.required(
+                  errorText: Content.addHostFromFieldHost.tr +
+                      Content.requiredField.tr),
+              FormBuilderValidators.ip(errorText: Content.isIp.tr),
+            ]),
+            keyboardType: TextInputType.number,
+            onSubmitted: (value) {},
+            onSaved: (value) => _redisVo.host = value,
+          ),
+          const Divider(height: 20),
+          FormBuilderTextField(
+            name: 'auth',
+            initialValue: _redisVo.auth,
+            textInputAction: TextInputAction.next,
+            decoration: InputDecoration(
+              labelText: Content.addHostFromFieldAuth.tr,
             ),
-            const Divider(height: 20),
-            FormBuilderTextField(
-              name: 'userName',
-              textInputAction: TextInputAction.done,
-              decoration: InputDecoration(
-                labelText: Content.addHostFromFieldUserName.tr,
-              ),
-              validator: FormBuilderValidators.compose([]),
-              onSubmitted: (value) {},
-              onSaved: (value) => _redisVo.userName = value,
+            obscureText: true,
+            validator: FormBuilderValidators.compose([]),
+            onSubmitted: (value) {},
+            onSaved: (value) => _redisVo.auth = value,
+          ),
+          const Divider(height: 20),
+          FormBuilderTextField(
+            name: 'userName',
+            initialValue: _redisVo.userName,
+            textInputAction: TextInputAction.done,
+            decoration: InputDecoration(
+              labelText: Content.addHostFromFieldUserName.tr,
             ),
-            const SizedBox(height: 70),
-            _buildSaveButton(context),
-          ],
-        ),
+            validator: FormBuilderValidators.compose([]),
+            onSubmitted: (value) {},
+            onSaved: (value) => _redisVo.userName = value,
+          ),
+          const SizedBox(height: 10),
+          _buildSaveButton(context),
+        ],
       ),
     );
   }
@@ -121,7 +123,6 @@ class AddPage extends StatelessWidget {
   Widget _buildSaveButton(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ElevatedButton(
           child: Text(Content.addHostSaveButton.tr),
@@ -150,7 +151,6 @@ class AddPage extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(20),
       child: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
         child: _buildFormFields(context),
       ),
     );
@@ -159,13 +159,15 @@ class AddPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //如果没有id 或者 insertTime 则是新增
+    var isEdit= true;
     if (_redisVo.id == null || _redisVo.insertTime == null) {
       _redisVo.id = const UuidV4().generate();
+      isEdit = false;
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(Content.addHostBarTitle.tr),
+        title: isEdit ? Text(Content.addHostBarTitleEdit.tr) : Text(Content.addHostBarTitle.tr),
       ),
       body: PageTransitionSwitcher(
         transitionBuilder: (Widget child, Animation<double> primaryAnimation,

@@ -12,6 +12,9 @@ class Messages extends Translations {
       Content.homePageAddButtonHint : "添加一个连接",
       Content.homePageMenu: "打开菜单",
 
+      // Home Page Actions
+      Content.homePageClearRedisVoList : "清空所有连接列表",
+
       //  Page Menu Drawer
       Content.drawerTitle : "RedisManager",
       Content.drawerSubTitle : "管理你的 redis 连接",
@@ -22,6 +25,7 @@ class Messages extends Translations {
 
       // Add Page
       Content.addHostBarTitle : "添加",
+      Content.addHostBarTitleEdit : "编辑",
       // Add Page Form
       Content.addHostFromFieldHost : "主机",
       Content.addHostFromFieldHostName : "主机名",
@@ -37,6 +41,10 @@ class Messages extends Translations {
       Content.requiredField : " 不能为空",
       Content.isIp : "请输入正确的 IP 地址",
 
+      // tag
+      Content.tagDelete : "删除",
+      Content.tagEdit : "编辑",
+
 
 
     },
@@ -46,6 +54,9 @@ class Messages extends Translations {
       Content.homePageIsEmptyText : "請先新增 redis 連接",
       Content.homePageAddButtonHint : "新增一個連接",
       Content.homePageMenu: "開啟菜單",
+
+      // Home Page Actions
+      Content.homePageClearRedisVoList : "清空所有連接列表",
 
       //  Page Menu Drawer
       Content.drawerTitle : "RedisManager",
@@ -57,6 +68,7 @@ class Messages extends Translations {
 
       // Add Page
       Content.addHostBarTitle : "新增",
+      Content.addHostBarTitleEdit : "編輯",
       // Add Page Form
       Content.addHostFromFieldHost : "主機",
       Content.addHostFromFieldHostName : "主機名",
@@ -71,6 +83,9 @@ class Messages extends Translations {
       Content.requiredField : " 不能為空",
       Content.isIp : "請輸入正確的 IP 位址",
 
+      // tag
+      Content.tagDelete : "刪除",
+      Content.tagEdit : "編集",
 
 
     },
@@ -80,6 +95,9 @@ class Messages extends Translations {
       Content.homePageIsEmptyText : "Please add redis connection first",
       Content.homePageAddButtonHint : "Add a connection",
       Content.homePageMenu: "Open menu",
+
+      // Home Page Actions
+      Content.homePageClearRedisVoList : "Clear all connection list",
 
       // Home Page Menu Drawer
       Content.drawerTitle : "RedisManager",
@@ -91,6 +109,7 @@ class Messages extends Translations {
 
       // Add Page
       Content.addHostBarTitle : "New Connection",
+      Content.addHostBarTitleEdit : "Edit Connection",
       // Add Page Form
       Content.addHostFromFieldHost : "Host",
       Content.addHostFromFieldHostName : "Host Name",
@@ -104,6 +123,10 @@ class Messages extends Translations {
       // validataion message
       Content.requiredField : " is required",
       Content.isIp : "Please enter a valid IP address",
+
+      // tag
+      Content.tagDelete : "Delete",
+      Content.tagEdit : "Edit",
     },
     "ja_JP":{
       // Home Page
@@ -111,6 +134,9 @@ class Messages extends Translations {
       Content.homePageIsEmptyText : "まず、redis 接続を追加してください",
       Content.homePageAddButtonHint : "接続を追加",
       Content.homePageMenu: "メニューを開く",
+
+      // Home Page Actions
+      Content.homePageClearRedisVoList : "すべての接続リストをクリア",
 
       //  Page Menu Drawer
       Content.drawerTitle : "RedisManager",
@@ -122,6 +148,7 @@ class Messages extends Translations {
 
       // Add Page
       Content.addHostBarTitle : "接続の追加",
+      Content.addHostBarTitleEdit : "接続の編集",
       // Add Page Form
       Content.addHostFromFieldHost : "ホスト",
       Content.addHostFromFieldHostName : "ホスト名",
@@ -135,6 +162,10 @@ class Messages extends Translations {
       // validataion message
       Content.requiredField : " は必須です",
       Content.isIp : "正しい IP アドレスを入力してください",
+
+      // tag
+      Content.tagDelete : "削除",
+      Content.tagEdit : "編集",
 
 
     },

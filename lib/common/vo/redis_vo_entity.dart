@@ -1,4 +1,3 @@
-import 'package:redis_mobile_manager/common/utils/date_time_utils.dart';
 import 'package:redis_mobile_manager/generated/json/base/json_field.dart';
 import 'package:redis_mobile_manager/generated/json/redis_vo_entity.g.dart';
 import 'dart:convert';
@@ -26,6 +25,6 @@ class RedisVoEntity {
 
 	@override
 	String toString() {
-		return jsonEncode(this,toEncodable: DateTimeUtils.dateTimeEncode);
+		return jsonEncode(this);
 	}
 }

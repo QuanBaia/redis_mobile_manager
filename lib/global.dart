@@ -19,5 +19,6 @@ class Global {
     // 加载service
     Get.lazyPut(() => SharedService());
 
+
   }
 }

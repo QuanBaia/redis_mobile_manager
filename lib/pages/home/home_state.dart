@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../common/vo/redis_vo_entity.dart';
+import 'index.dart';
 
 class HomeState {
 
@@ -13,13 +14,23 @@ class HomeState {
   List<RedisVoEntity> get  redisVoList => _redisVoList;
 
 
-  //控制 drawer 的选中状态
+  //控制首页索引
   final _selectedIndex = 0.obs;
   int get selectedIndex => _selectedIndex.value;
   set selectedIndex(int value) => _selectedIndex.value = value;
 
 
+  //当前的设备宽度信息 初始化为小屏
+  final Rx<DeviceTypeEnum> _deviceType = DeviceTypeEnum.small.obs;
+  DeviceTypeEnum get deviceType => _deviceType.value;
+  set deviceType(DeviceTypeEnum value) => _deviceType.value = value;
+
+  //页面控制器
+  final PageController _pageController = PageController();
+  PageController get pageController => _pageController;
 
 
-  HomeState() {}
+
+
+  HomeState();
 }

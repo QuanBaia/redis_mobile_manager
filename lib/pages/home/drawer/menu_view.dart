@@ -27,7 +27,6 @@ class MenuPage extends StatelessWidget {
           Get.back();
         },
         children: [
-
           ListTile(
             leading: const FlutterLogo(size: 50),
             title: Text(Content.drawerTitle.tr),
